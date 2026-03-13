@@ -29,35 +29,7 @@ This project replicates basic features of modern AI chat applications like ChatG
 - **CSS**
 - **Google Gemini API**
 - **React Context API**
-
 ---
-    src
-    │
-    ├── assets
-    │ └── icons and images
-    │
-    ├── components
-    │ ├── Main
-    │ │ ├── Main.jsx
-    │ │ └── Main.css
-    │ │
-    │ └── Sidebar
-    │ ├── Sidebar.jsx
-    │ └── Sidebar.css
-    │
-    ├── context
-    │ └── Context.jsx
-    │
-    ├── config
-    │ └── gemini.js
-    │
-    ├── App.jsx
-    ├── App.css
-    └── main.jsx
-    
-    
-    ---
-
 ##  Installation
 
 ###  1.Clone the repository
