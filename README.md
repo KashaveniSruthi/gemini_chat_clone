@@ -62,12 +62,12 @@ This project replicates basic features of modern AI chat applications like ChatG
 
 ###  1.Clone the repository
 ``` 
-git clone https://github.com/KashaveniSruthi/gemini-chat-clone.git
+git clone https://github.com/KashaveniSruthi/gemini_chat_clone.git
  ```
 
 2. Navigate to the project folder
 ```
-cd gemini-chat-clone
+cd gemini_chat_clone
 ```
 3. Install dependencies
 ```
@@ -95,7 +95,7 @@ src/config/gemini.js
 
 Example:
 
-const API_KEY = "YOUR_API_KEY_HERE";
+```const API_KEY = "YOUR_API_KEY_HERE";```
 ## How the Application Works
 
 - User enters a prompt in the chat input.
