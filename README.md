@@ -1,16 +1,146 @@
-# React + Vite
+# Gemini AI Chat Clone (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **Gemini AI Chat application** built using **React.js** that allows users to send prompts and receive AI-generated responses using the **Google Gemini API**.
 
-Currently, two official plugins are available:
+This project replicates basic features of modern AI chat applications like ChatGPT or Gemini, including chat history, recent prompts, and a collapsible sidebar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+##  Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- AI-powered chat using **Google Gemini API**
+- **New Chat** functionality
+- **Recent prompts history**
+- **Collapsible sidebar navigation**
+- **Formatted AI responses**
+  - Bold text
+  - Headings
+  - Line breaks
+- **Typing-style response rendering**
+- **Responsive UI**
+- State management using **React Context API**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Tech Stack
+
+- **React.js**
+- **JavaScript (ES6)**
+- **CSS**
+- **Google Gemini API**
+- **React Context API**
+
+---
+    src
+    │
+    ├── assets
+    │ └── icons and images
+    │
+    ├── components
+    │ ├── Main
+    │ │ ├── Main.jsx
+    │ │ └── Main.css
+    │ │
+    │ └── Sidebar
+    │ ├── Sidebar.jsx
+    │ └── Sidebar.css
+    │
+    ├── context
+    │ └── Context.jsx
+    │
+    ├── config
+    │ └── gemini.js
+    │
+    ├── App.jsx
+    ├── App.css
+    └── main.jsx
+    
+    
+    ---
+
+##  Installation
+
+###  1.Clone the repository
+``` 
+git clone https://github.com/KashaveniSruthi/gemini-chat-clone.git
+ ```
+
+2. Navigate to the project folder
+```
+cd gemini-chat-clone
+```
+3. Install dependencies
+```
+npm install
+```
+4.Start the development server
+```
+npm run dev
+```
+
+The app will start at:
+
+http://localhost:5173
+## Gemini API Setup
+
+- Go to Google AI Studio
+
+https://aistudio.google.com/
+
+- Generate a Gemini API Key
+
+- Add your API key inside the file:
+
+src/config/gemini.js
+
+Example:
+
+const API_KEY = "YOUR_API_KEY_HERE";
+## How the Application Works
+
+- User enters a prompt in the chat input.
+
+- The prompt is sent to the Gemini API.
+
+- Gemini generates a response.
+
+- The response is formatted and displayed in the UI.
+
+- The prompt is stored in Recent Prompts in the sidebar.
+
+- Clicking a recent prompt reloads that conversation.
+
+## State Management
+
+The project uses React Context API to manage global states such as:
+
+- User input
+
+- Recent prompts
+
+- AI responses
+
+- Loading state
+
+- Chat visibility
+
+Main context file:
+
+```src/context/Context.jsx```
+
+## Future Improvements
+
+- Multiple chat sessions
+
+- Save chats in LocalStorage
+
+- Dark mode support
+
+- Streaming AI responses
+
+- Authentication system
+
+- Markdown support
+
+- Mobile UI improvements
+
