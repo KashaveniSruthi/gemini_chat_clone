@@ -1,0 +1,36 @@
+import bulb_icon from './bulb_icon.png'
+import code_icon from './code_icon.png'
+import history_icon from './history_icon.png'
+import compass_icon from './compass_icon.png'
+import gallery_icon from './gallery_icon.png'
+import gallery from './gallery.png'
+import gemini_icon from './gemini_icon.png'
+import menu_icon from './menu_icon.png'
+import message_icon from './message_icon.png'
+import question_icon from './question_icon.png'
+import save_icon from './save_icon.png'
+import send_icon from './send_icon.png'
+import settings_icon from './settings_icon.png'
+import user_icon from './user_icon.png'
+import youtube from './youtube.png'
+import plus_icon from './plus_icon.png'
+import mic_icon from './mic_icon.png'
+export const assets = {
+    mic_icon,
+    bulb_icon,
+    code_icon,
+    history_icon,
+    compass_icon,
+    gallery_icon,
+    gallery,
+    gemini_icon,
+    menu_icon,
+    message_icon,
+    question_icon,
+    save_icon,
+    send_icon,
+    settings_icon,
+    plus_icon,
+    user_icon,
+    youtube,
+}

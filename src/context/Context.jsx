@@ -1,0 +1,76 @@
+import { createContext, useEffect, useState } from "react";
+import runChat from "../config/gemini";
+
+export const Context = createContext();
+
+const ContextProvider = (props) => {
+  const [input, setInput] = useState("");
+  const [recentPrompt, setRecentPrompt] = useState("");
+  const [prevPrompts, setPrevPrompts] = useState([]);
+  const [showResult, setShowResult] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [resultData, setResultData] = useState("");
+  const delayPara = (index, nextWord) => {
+    setTimeout(function () { setResultData(prev => prev + nextWord) }, 75 * index)
+  }
+  const newChat = () => {
+    setLoading(false);
+    setShowResult(false);
+
+  }
+  const onSent = async (prompt) => {
+  setResultData("");
+  setLoading(true);
+  setShowResult(true);
+
+  const userPrompt = prompt || input;
+  if(!prevPrompts.includes(prompt)){
+   setPrevPrompts(prev => [...prev, prompt])
+}
+  setRecentPrompt(userPrompt);
+    
+  const response = await runChat(userPrompt);
+
+  let responseArray = response.split("**");
+  let newResponse = "";
+
+  for (let i = 0; i < responseArray.length; i++) {
+    if (i === 0 || i % 2 === 0) {
+      newResponse += responseArray[i];
+    } else {
+      newResponse += "<b>" + responseArray[i] + "</b>";
+    }
+  }
+
+  let formattedResponse = newResponse
+    .replace(/### (.*)/g, "<h3>$1</h3>")
+    .replace(/\n/g, "<br>");
+
+  setResultData(formattedResponse);
+
+  setLoading(false);
+  setInput("");
+};
+
+  const contextValue = {
+    prevPrompts,
+    setPrevPrompts,
+    onSent,
+    setRecentPrompt,
+    recentPrompt,
+    showResult,
+    loading,
+    resultData,
+    input,
+    setInput, newChat
+  };
+
+
+  return (
+    <Context.Provider value={contextValue}>
+      {props.children}
+    </Context.Provider>
+  );
+};
+
+export default ContextProvider;
